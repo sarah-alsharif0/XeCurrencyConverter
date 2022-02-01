@@ -1,0 +1,52 @@
+.convertContainer{
+    color: black;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.inputs{
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.actionsContainer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    width: 290px;
+    height: 50px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgb(214, 213, 213);
+    padding-right: 40px;
+    cursor: pointer;
+}
+label{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.convertButton{
+    border-radius: 8px;
+    border: none;
+    padding: 15px 16px;
+    margin: 10px 10px;
+    font-size: 1.0rem;
+    background: rgb(0, 113, 235);
+    color: white;
+    font-weight: 600;
+}
