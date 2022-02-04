@@ -1,3 +1,6 @@
+*{
+    list-style-type: none;
+}
 .convertContainer{
     color: black;
     height: 100%;
@@ -9,13 +12,15 @@
 .inputs{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 80%;
+    flex-wrap: wrap;
 }
 .inputContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; 
 }
 .actionsContainer{
     margin-top: 10px;
@@ -23,9 +28,8 @@
     justify-content: space-between;
     align-items: center;
 }
-input{
+input, .droplistDefault{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     overflow: hidden;
     width: 290px;
@@ -33,8 +37,10 @@ input{
     margin: 10px 0 10px 0;
     border-radius: 5px;
     border: 1px solid rgb(214, 213, 213);
-    padding-right: 40px;
+    padding: 8px 12px;
     cursor: pointer;
+    outline: rgb(0, 113, 235);
+    box-shadow: 0px 0px 25px 3px rgba(240, 239, 239, 0.53);
 }
 label{
     font-weight: bold;
@@ -49,4 +55,62 @@ label{
     background: rgb(0, 113, 235);
     color: white;
     font-weight: 600;
+    cursor: pointer;
+
+}
+.convertButton:hover{
+    opacity: 50%;
+}
+.swapButton{
+    height: fit-content;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 1px solid rgb(214, 213, 213);
+    box-shadow: 0px 0px 25px 3px rgba(240, 239, 239, 0.53);
+    padding: 18px 10px 18px 10px;
+    background: white;
+    color: rgb(0, 113, 235);
+    margin-top: 20px;
+}
+.flag{
+    width: 35px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.droplist{
+    position: absolute;
+    font-size: 14px;
+    margin-top: -9px;
+    max-height: 300px;
+    height: fit-content;
+    overflow-y: scroll;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px 3px rgba(240, 239, 239, 0.53);
+}
+.droplist .flag{
+    width: 25px;
+}
+.droplistItem{
+    cursor: pointer;
+    align-items: center;
+    width: 273px;
+    display: flex;
+    padding: 16px 12px;
+    word-wrap: break-word;
+    
+}
+.droplistItem:hover{
+    background: whitesmoke;
+}
+.droplistContainer{
+    position: relative;
+}
+.resultContainer{
+    display: flex;
+    text-align: start;
+    margin-top: 30px;
+    font-size: 30px;
+    color: rgb(10, 20, 110);
+    line-height: 40px;
 }

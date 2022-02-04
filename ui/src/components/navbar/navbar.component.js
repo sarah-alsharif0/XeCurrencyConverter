@@ -6,7 +6,7 @@ export const Navbar = () => {
 
     <nav className={classes.navbar}>
       <div>
-        <a ><img className={classes.logo} src="/images/xeLogo.png"/></a>
+        <a href="/"><img alt="logo" className={classes.logo} src="/images/xeLogo.png"/></a>
       </div>
       <ul className={classes.navList}>
         <li className={classes.navItem}>Converter</li>

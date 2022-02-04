@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import classes from "./header.module.css";
-import 'font-awesome/css/font-awesome.min.css';
 import { Convert } from "../convert/convert.component";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import 'font-awesome/css/font-awesome.min.css';
+
 
 export const Header = () => {
   const [currentTab, setCurrentTab] = useState("convert");
@@ -20,7 +22,7 @@ export const Header = () => {
             onClick={() => handleClick("convert")}
             className={[
               classes.tab,
-              currentTab == "convert" && classes.selectedTab,
+              currentTab === "convert" && classes.selectedTab,
               classes.leftCornerTab,
             ].join(" ")}
           >
@@ -30,7 +32,7 @@ export const Header = () => {
             onClick={() => handleClick("send")}
             className={[
               classes.tab,
-              currentTab == "send" && classes.selectedTab,
+              currentTab === "send" && classes.selectedTab,
             ].join(" ")}
           >
             Send
@@ -39,7 +41,7 @@ export const Header = () => {
             onClick={() => handleClick("charts")}
             className={[
               classes.tab,
-              currentTab == "charts" && classes.selectedTab,
+              currentTab === "charts" && classes.selectedTab,
             ].join(" ")}
           >
             Charts
@@ -48,17 +50,17 @@ export const Header = () => {
             onClick={() => handleClick("alerts")}
             className={[
               classes.tab,
-              currentTab == "alerts" && classes.selectedTab,
+              currentTab === "alerts" && classes.selectedTab,
               classes.rightCornerTab,
             ].join(" ")}
           >
             Alerts
           </div>
         </div>
-        {currentTab == "convert" && <Convert/>}
-        {currentTab == "send" && <div className={classes.box}>send</div>}
-        {currentTab == "charts" && <div className={classes.box}>charts</div>}
-        {currentTab == "alerts" && <div className={classes.box}>alerts</div>}
+        {currentTab === "convert"&&<Convert/>}
+        {currentTab === "send" && <div className={classes.box}>send</div>}
+        {currentTab === "charts" && <div className={classes.box}>charts</div>}
+        {currentTab === "alerts" && <div className={classes.box}>alerts</div>}
       </div>
     </div>
   );
