@@ -19,8 +19,8 @@ export const Convert = () => {
   const [amount,setAmount] = useState(1.00);
   const [result,setResult] = useState(0);
 
-  const firstref = useRef();
-  const secondref = useRef();
+  const firstRef = useRef();
+  const secondRef = useRef();
 
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
@@ -28,8 +28,8 @@ export const Convert = () => {
       // then close the menu
       if (
         firstClicked &&
-        firstref.current &&
-        !firstref.current.contains(e.target)
+        firstRef.current &&
+        !firstRef.current.contains(e.target)
       ) {
         setFirstClicked(false);
       }
@@ -49,8 +49,8 @@ export const Convert = () => {
       // then close the menu
       if (
         secondClicked &&
-        secondref.current &&
-        !secondref.current.contains(e.target)
+        secondRef.current &&
+        !secondRef.current.contains(e.target)
       ) {
         setSecondClicked(false);
       }
@@ -203,7 +203,7 @@ export const Convert = () => {
           )}
           {filteredFirstCurrencies.length !== 0
             ? firstClicked && (
-                <div ref={firstref} className={classes.droplistContainer}>
+                <div ref={firstRef} className={classes.droplistContainer}>
                   <ul className={classes.droplist}>
                     {filteredFirstCurrencies.map((item, index) => {
                       if (item.currency != firstCurr.currency && item.currency != secondCurr.currency) {
@@ -267,7 +267,7 @@ export const Convert = () => {
           {filteredSecondCurrencies.length !== 0
             ? secondClicked && (
                 <div
-                  ref={secondref}
+                  ref={secondRef}
                   className={classes.droplistContainer}
                 >
                   <ul className={classes.droplist}>
