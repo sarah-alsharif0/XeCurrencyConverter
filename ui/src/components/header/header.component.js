@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import classes from "./header.module.css";
 import { Convert } from "../convert/convert.component";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {BiCoinStack,BiSend } from "react-icons/bi";
+import {AiOutlineLineChart } from "react-icons/ai";
+import {BsBell } from "react-icons/bs";
 import 'font-awesome/css/font-awesome.min.css';
 
 
@@ -26,6 +28,7 @@ export const Header = () => {
               classes.leftCornerTab,
             ].join(" ")}
           >
+            <BiCoinStack className={classes.icon}/>
             Convert
           </div>
           <div
@@ -35,6 +38,7 @@ export const Header = () => {
               currentTab === "send" && classes.selectedTab,
             ].join(" ")}
           >
+            <BiSend className={classes.icon}/>
             Send
           </div>
           <div
@@ -44,6 +48,7 @@ export const Header = () => {
               currentTab === "charts" && classes.selectedTab,
             ].join(" ")}
           >
+            <AiOutlineLineChart className={classes.icon}/>
             Charts
           </div>
           <div
@@ -54,6 +59,7 @@ export const Header = () => {
               classes.rightCornerTab,
             ].join(" ")}
           >
+            <BsBell className={classes.icon}/>
             Alerts
           </div>
         </div>

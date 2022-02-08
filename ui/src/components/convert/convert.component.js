@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getCurrencies,getCurrencyRates } from "../../services/currencies";
+import { SwapOutlined } from '@ant-design/icons';
 import classes from "./convert.module.css";
+import {IoMdAlert } from "react-icons/io";
 
 export const Convert = () => {
   const [currencies, setCurrencies] = useState([]);
@@ -146,6 +148,7 @@ export const Convert = () => {
       const tmpSecond = secondCurr; 
       setFirstCurr(tmpSecond);
       setSecondCurr(tmpFirst);
+      setResult(0);
   }
   const fetchRates  = ()=> {
       if(firstCurr.currency && secondCurr.currency){
@@ -234,7 +237,7 @@ export const Convert = () => {
                 </div>
               )}
         </div>
-        <button onClick={handleSwap} className={classes.swapButton}>swap</button>
+        <button onClick={handleSwap} className={classes.swapButton}><SwapOutlined style={{ fontSize: '20px' }} /></button>
         <div className={classes.inputContainer}>
           <label>To</label>
           {secondClicked && (
@@ -302,10 +305,10 @@ export const Convert = () => {
         </div>
       </div>
       {result > 0 && <div className={classes.resultContainer}> 
-          <span>{amount} {firstCurr.name}s = <br></br>{result} {secondCurr.name}s</span>
+          <span className={classes.resultText}>{amount} {firstCurr.name}s = </span><span className={classes.result}>{result} {secondCurr.name}s</span>
       </div>}
       <div className={classes.actionsContainer}>
-        <span>We use midmaket rates </span>
+        <span className={classes.tooltip}>We use midmaket rates <IoMdAlert className={classes.icon}/> </span>
          <button onClick={handleConvert} className={classes.convertButton}>Convert</button>
       </div>
     </div>
