@@ -127,3 +127,16 @@ label{
     font-size: 18px;
     color: rgb(83, 83, 83);
 }
+.amountLabel{
+    position: relative;
+}
+.symbol{
+    position: absolute;
+    right: 40px;
+    top: 45.9px;
+    font-weight: 500;
+}
+.amountInput{
+    padding-left: 30px;
+    font-size: 16px;
+}

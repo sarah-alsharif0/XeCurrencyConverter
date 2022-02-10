@@ -5,6 +5,7 @@ import {BiCoinStack,BiSend } from "react-icons/bi";
 import {AiOutlineLineChart } from "react-icons/ai";
 import {BsBell } from "react-icons/bs";
 import 'font-awesome/css/font-awesome.min.css';
+import { Send } from "../send/send.component";
 
 
 export const Header = () => {
@@ -64,7 +65,7 @@ export const Header = () => {
           </div>
         </div>
         {currentTab === "convert"&&<Convert/>}
-        {currentTab === "send" && <div className={classes.box}>send</div>}
+        {currentTab === "send" && <Send/>}
         {currentTab === "charts" && <div className={classes.box}>charts</div>}
         {currentTab === "alerts" && <div className={classes.box}>alerts</div>}
       </div>

@@ -174,8 +174,9 @@ export const Convert = () => {
     <div className={classes.convertContainer}>
       <div className={classes.inputs}>
         <div className={classes.inputContainer}>
-          <label>Amount</label>
-          <input onChange={handleChangeAmount} type="number" value={amount}></input>
+          <label className={classes.amountLabel}>Amount<span className={classes.symbol}>{firstCurr.symbol}</span></label>
+          
+          <input className={classes.amountInput} onChange={handleChangeAmount} type="number" value={amount}></input>
         </div>
 
         <div className={classes.inputContainer}>
