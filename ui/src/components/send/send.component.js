@@ -7,7 +7,40 @@ export const Send = () => {
   return (
     <div className={classes.sendContainer}>
       <div className={classes.formContainer}>
-
+          <div className={classes.inputs}>
+            <div className={classes.senderAndReceiver}>
+            <div className={classes.inputContainer}>
+              <label>
+                  Sender: 
+              </label>
+              <input type="text"></input>
+            </div>
+            <div className={classes.inputContainer}>
+              <label>
+                Receiver:
+              </label>
+              <input type="text"></input>
+            </div>
+            </div>
+            <div className={classes.inputContainer}>
+              <label>
+                Amount:
+              </label>
+              <input type="number"></input>
+            </div>
+            <div className={classes.inputContainer}>
+              <label>
+              Payment:
+              </label>
+              <select className={classes.select}>
+                <option className={classes.option}>Visa Card</option>
+                <option className={classes.option}>Mastercard</option>
+                <option className={classes.option}>EFT</option>
+                <option className={classes.option}>ACH</option>
+                <option className={classes.option}>WIRE</option>
+              </select>
+            </div>
+          </div>
       </div>
       <div className={classes.aboutContainer}>
         <h3>The fast & trusted way to send money</h3>

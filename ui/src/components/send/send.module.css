@@ -3,7 +3,17 @@
     padding: 50px;
     height: 100%;
     color: black;
+    flex-wrap: wrap;
 }
+@media only screen and (max-width: 900px) {
+    .sendContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .formContainer{
+        margin-bottom: 50px;
+    }
+  }
 
 .formContainer {
     width: 50%;
@@ -89,4 +99,36 @@
     box-sizing: border-box;
     width: 35px;
     height: 26px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.senderAndReceiver{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.select{
+    width: 290px;
+    width: 290px;
+    height: 50px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgb(214, 213, 213);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: rgb(0, 113, 235);
+    font-weight: 700;
+    box-shadow: 0px 0px 25px 3px rgba(240, 239, 239, 0.53);
+}
+.option{
+    border-radius: 0;
 }
