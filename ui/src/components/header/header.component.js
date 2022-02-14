@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./header.module.css";
 import { Convert } from "../convert/convert.component";
 import {BiCoinStack,BiSend } from "react-icons/bi";
@@ -6,13 +6,45 @@ import {AiOutlineLineChart } from "react-icons/ai";
 import {BsBell } from "react-icons/bs";
 import 'font-awesome/css/font-awesome.min.css';
 import { Send } from "../send/send.component";
-
+import { getCurrencies} from "../../services/currencies";
 
 export const Header = () => {
+  const [currencies, setCurrencies] = useState([]);
   const [currentTab, setCurrentTab] = useState("convert");
   const handleClick = (tabName) => {
     setCurrentTab(tabName);
   };
+  useEffect(() => {
+    let tmpCurrencies = [];
+    if (currencies.length === 0)
+      getCurrencies().then((data) => {
+        data.forEach((element) => {
+          const currency = element["currencies"]
+            ? Object.keys(element["currencies"])[0]
+            : "";
+
+          const name = currency ? element["currencies"][currency]["name"] : "";
+          const symbol = currency
+            ? element["currencies"][currency]["symbol"]
+            : "";
+          const country = currency ? element["name"]["common"] : "";
+
+          const flag = element["flags"] ? element["flags"]["svg"] : "";
+          if (currency && flag && symbol && name && country) {
+            const newCurr = {
+              country: country,
+              currency: currency,
+              flag: flag,
+              name: name,
+              symbol: symbol,
+            };
+            tmpCurrencies.push(newCurr);
+          }
+        });
+        setCurrencies(tmpCurrencies);
+      });
+  }, []);
+  
   return (
     <div className={classes.container}>
       <h1 className={classes.title}>Xe Currency Converter</h1>
@@ -64,8 +96,8 @@ export const Header = () => {
             Alerts
           </div>
         </div>
-        {currentTab === "convert"&&<Convert/>}
-        {currentTab === "send" && <Send/>}
+        {currentTab === "convert"&&<Convert currencies={currencies}/>}
+        {currentTab === "send" && <Send currencies={currencies}/>}
         {currentTab === "charts" && <div className={classes.box}>charts</div>}
         {currentTab === "alerts" && <div className={classes.box}>alerts</div>}
       </div>

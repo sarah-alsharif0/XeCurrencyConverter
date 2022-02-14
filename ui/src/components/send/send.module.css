@@ -17,6 +17,9 @@
 
 .formContainer {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .aboutContainer {
@@ -131,4 +134,15 @@
 }
 .option{
     border-radius: 0;
+}
+.sendButton{
+    border-radius: 8px;
+    border: none;
+    padding: 15px 16px;
+    margin: 10px 10px;
+    font-size: 1.0rem;
+    background: rgb(0, 113, 235);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
 }

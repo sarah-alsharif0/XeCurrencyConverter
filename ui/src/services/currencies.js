@@ -8,7 +8,6 @@ export const getCurrencies = () => {
         });
 }
 export const getCurrencyRates = (currency) => {
-    console.log(currency);
     return fetch(`http://www.floatrates.com/daily/${currency}.json`)
     .then(async (res)=>{
         return await res.json();
